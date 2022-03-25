@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{makecell}
+%\geometry{a4paper,scale=0.7}
+
+\title{\heiti 实验十九\ 分光计的调节和掠入法测折射率}
+\author{\kaishu 田睿轩\ 物理学院\ 1900011602}
+\date{2020年10月23日}
+\newcommand{\degree}{^\circ}
+
+\begin{document}
+    \maketitle
+    
+    \section{数据处理}
+    
+    \subsection{顶角$A$的测定}
+    移动分光计的望远镜筒，当对准AB面或AC面的法线时，记下左右游标的示数，利用公式$\phi=\frac{1}{2}[(\theta_1^{''}-\theta_1^{'})+(\theta_2^{''}-\theta_2^{'})]$计算$A$的补角$\phi$
+
+    再根据$A=180\degree-\phi$计算顶角$A$
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        次数 & \makecell[c]{AB法线\\左游标$\theta_1^{'}$} & \makecell[c]{AB法线\\右游标$\theta_1^{''}$} & \makecell[c]{AC法线\\左游标$\theta_2^{'}$} & \makecell[c]{AC法线\\右游标$\theta_2^{''}$} & 补角$\phi$ & 顶角$A$ \\
+        \hline
+        1 & $37\degree06'$ & $217\degree10'$ & $157\degree10'$ & $337\degree05'$ & $119\degree59'30''$ & $60.008\degree$ \\
+        \hline
+        2 & $40\degree46'$ & $221\degree10'$ & $161\degree02'$ & $340\degree59'$ & $120\degree05'30''$ & $59.908\degree$ \\
+        \hline
+        3 & $36\degree29'$ & $216\degree35'$ & $156\degree35'$ & $336\degree33'$ & $120\degree02'30''$ & $59.958\degree$ \\
+        \hline
+        平均 & --- & --- & --- & --- & --- & $59.958\degree$ \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    $\bar{A}$的标准差$$\sigma_{\bar{A}}=\sqrt{\frac{\sum_{i=1}^n (A-\bar A)^2}{n(n-1)}}=0.029\degree$$
+
+    考虑到分光计的允差为$e=1'\approx0.017\degree$,故$A$的不确定度为$$\sigma_A = \sqrt{\sigma_{\bar{A}}^2 + (\frac{e}{\sqrt{3}})^2} = 0.034\degree$$
+
+    综上，分光计的顶角$A$为$$A=(59.958\pm0.034)\degree$$
+
+    \subsection{掠入法测折射率}
+    移动望远镜镜筒，找到明暗分界线，此即钠灯光线以$90\degree$入射得到的出射光线，其与法线之间的夹角即为出射极限角$\phi$,再根据
+    $$n=\sqrt{1+(\frac{\cos A+\sin\phi}{\sin A})^2}$$计算折射率
+
+    \begin{center}    
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        次数 & \makecell[c]{明暗分界线\\左游标$\theta_3^{'}$} & \makecell[c]{明暗分界线\\右游标$\theta_3^{''}$} & \makecell[c]{AC法线\\左游标$\theta_4^{'}$} & \makecell[c]{AC法线\\右游标$\theta_4^{''}$} & 出射极限角$\phi$ & 折射率$n$ \\
+        \hline
+        1 & $197\degree00'$ & $16\degree53'$ & $155\degree35'$ & $335\degree31'$ & $41.392\degree$ & $1.6737$ \\
+        \hline
+        2 & $190\degree14'$ & $10\degree05'$ & $148\degree47'$ & $328\degree44'$ & $41.400\degree$ & $1.6737$ \\
+        \hline
+        3 & $183\degree04'$ & $2\degree59'$ & $141\degree40'$ & $321\degree37'$ & $41.383\degree$ & $1.6737$ \\
+        \hline
+        平均 & --- & --- & --- & --- & $41.392$ & $1.6737$ \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    出射极限角的不确定度为平均值的不确定度和允差带来的不确定度的方和根
+    $$\sigma_\phi=\sqrt{\sigma_{\bar{\phi}}^2+(\frac{e}{\sqrt{3}})^2}=\sqrt{0.0058^2+\frac{0.017^2}{3}}=0.011\degree$$
+
+    故出射极限角$\phi$为
+    $$\phi = (41.392\pm 0.011) \degree$$
+
+    n为间接测量量，其不确定度由顶角$A$和出射极限角$\phi$传递而来
+    $$\sigma_n = \frac{\cos A + \sin \phi}{n \sin A}\sqrt{(\frac{\cos \phi}{\sin A}\sigma_\phi)^2 + (\frac{\cos A \sin \phi +1}{\sin^2 A}\sigma_A)^2}=0.0007$$
+    
+    所以折射率为
+    $$n=1.6737\pm0.0007$$
+
+    \subsection{最小偏向角测折射率}
+    测量汞灯发出的光中的绿色谱线的最小偏向角，实验中转动三棱镜，
+    当绿谱线由向某一方向移动转为向向反方向移动，该转折位置即为绿谱线最小偏向角对应的位置，
+    其与发现之间的夹角即为最小偏向角$\delta_m$，再根据
+    $$n=\frac{\sin \frac{A+\delta_m}{2}}{\sin\frac{A}{2}}$$计算折射率
+
+    \begin{center}    
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            次数 & \makecell[c]{转折位置\\左游标$\theta_5^{'}$} & \makecell[c]{转折位置\\右游标$\theta_5^{''}$} & \makecell[c]{法线\\左游标$\theta_6^{'}$} & \makecell[c]{法线\\右游标$\theta_6^{''}$} & 最小偏向角$\delta_m$ & 折射率$n$ \\
+            \hline
+            1 & $29\degree05'$ & $209\degree14'$ & $335\degree03'$ & $155\degree10'$ & $54.050\degree$ & $1.6789$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    由于只测了一次，所以最小偏向角$\delta_m$的不确定度只有仪器允差引起的不确定度
+    $$\sigma_{\delta_m} = \frac{e}{\sqrt{3}} = 0.001\degree$$
+
+    故最小偏向角为
+    $$\delta_m=(54.050\pm0.001)\degree$$
+
+    折射率的不确定度由最小偏向角$\delta_m$和顶角$A$的不确定度传递而来
+    $$\sigma_n = \sqrt{(\frac{\sin \frac{\delta_m}{2}}{2\sin^2 \frac{A}{2}}\sigma_A)^2 + (\frac{\cos \frac{A+\delta_m}{2}}{2\sin \frac{A}{2}}\sigma_{\delta_m})^2}=0.0003$$
+
+    故三棱镜折射率为
+    $$n=1.6789\pm0.0003$$
+
+    \section{分析与讨论}
+    
+    \subsection{实验中测量误差的来源分析}
+    
+    \subsubsection{谱线误差}
+    若光路未调整在同一水平线上，会给各角度带来误差；
+    另外，测量中需要将望远镜中叉丝中线与明暗交界线或谱线对齐，这个对齐的过程也会带来误差，尤其是谱线较宽的时候
+
+    \subsubsection{读数误差}
+    读游标的时候很难判断相邻的两根线里到底哪一根是对齐的，所以读数的过程中会带来误差，
+    不过这一误差可以通过多次测量取平均值来减小
+
+    \subsubsection{仪器误差}
+    仪器本身有允差，且游标盘有偏心差，不过游标盘的偏心差已经通过左右游标读数消除
+
+    \section{收获与感想}
+    实验中调节载物台的水平的时候，通过将三棱镜垂直于螺丝连线放置，使得调节两个面时互不影响，
+    这种将二维调节化简为两个一维的独立调节的方式是非常有用的
+
+    另外，实验中在找最小偏向角的转折位置的时候，在找到一个大致的位置之后我将叉丝对准谱线，锁死望远镜，
+    然后再移动游标盘，若谱线继续移动，则再将望远镜跟随过去，若谱线反向移动，则望远镜位置即为最小偏向角处
+    由于分光计对晃动很敏感，所以这一交替移动望远镜和游标盘的方式可以保证一个移动时另一个可以锁死，防止晃动造成的位移
+    另外这应该也是一种“逐步逼近”的思想，可以更好地找到转折位置
+
+\end{document}
